@@ -109,5 +109,5 @@ class ProviderDynamicExtensionTest extends UrlbarProvider {
 let testProvider;
 (async function main() {
   testProvider = new ProviderDynamicExtensionTest();
-  addProvider(testProvider);
+  // To remove the provider, call testProvider.uninit().
 })();
