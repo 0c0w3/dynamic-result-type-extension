@@ -62,8 +62,18 @@ class ProviderDynamicExtensionTest extends UrlbarProvider {
     return true;
   }
 
-  // Updates the result's view.
-  getViewUpdate(result) {
+  /**
+   * This is called when the urlbar view updates the view of one of the results
+   * of the provider.  It should return an object describing the view update.
+   * See the base UrlbarProvider class for more.
+   *
+   * @param {UrlbarResult} result The result whose view will be updated.
+   * @param {Map} idsByName
+   *   A Map from an element's name, as defined by the provider; to its ID in
+   *   the DOM, as defined by the browser.
+   * @returns {object} An object describing the view update.
+   */
+  getViewUpdate(result, idsByName) {
     return {
       icon: {
         attributes: {
