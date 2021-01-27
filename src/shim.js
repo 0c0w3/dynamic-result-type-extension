@@ -61,6 +61,10 @@ class UrlbarProvider {
   async onQueryCanceled(query) {
     await this.cancelQuery(query);
   }
+
+  async onEngagement(state) {
+    await this.onEngagement(state);
+  }
 }
 
 class UrlbarResult {
@@ -97,5 +101,11 @@ let UrlbarUtils = {
     TABS: "tabs",
     OTHER_LOCAL: "local",
     OTHER_NETWORK: "network",
+  },
+  // Whether a result should be highlighted up to the point the user has typed
+  // or after that point.
+  HIGHLIGHT: {
+    TYPED: 1,
+    SUGGESTED: 2,
   },
 };
